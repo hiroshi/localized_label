@@ -1,0 +1,24 @@
+LocalizedLabel
+==============
+
+ActionView::Helpers::FormHelper.label should localize the content if the text argument is nil.
+This issue was already reported:
+ http://rails.lighthouseapp.com/projects/8994/tickets/745
+ http://i18n.lighthouseapp.com/projects/14948-rails-i18n/tickets/10-form-label-should-use-i18n
+but if you are impatient like me use this plugin till official resolution is released.
+
+
+Example
+=======
+
+config/ja.yml:
+  ja:
+    activerecord:
+      attributes:
+        user:
+          name: 名前
+
+ <% label "user", "name" %>
+ # => <label for="user_name">名前</label>
+
+Copyright (c) 2009 Hiroshi Saito (Yakitara.com), released under the MIT license
